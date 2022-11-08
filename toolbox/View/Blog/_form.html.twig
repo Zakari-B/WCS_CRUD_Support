@@ -1,0 +1,10 @@
+{# TODO : manage errors display #}
+
+<form method="post">
+	<input type="hidden" value="{{ article.id }}" name="id">
+	<label for="title">Title</label>
+	<input type="text" value="{{ article.title }}" name="title" id="title">
+	<label for="content">Content</label>
+	<textarea name="content" id="content">{{ article.content }}</textarea>
+	<button>Submit</button>
+</form>

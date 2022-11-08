@@ -38,3 +38,7 @@ As a reminder, CRUD stands for Create Update Read Delete, so the end result must
 -   Delete (to remove one of the entry from the database)
 
 The routes.php file already provides the required routes but feel free to modify them if you want or need to.
+
+## Correction
+
+If you are stuck, or if you finished this exercise, you can check the toolbox in this branch to get an example of what the end result could look like.
