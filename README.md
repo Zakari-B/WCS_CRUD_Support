@@ -38,3 +38,7 @@ As a reminder, CRUD stands for Create Update Read Delete, so the end result must
 -   Delete (to remove one of the entry from the database)
 
 The routes.php file already provides the required routes but feel free to modify them if you want or need to.
+
+### Bonus
+
+Once you're done, try to add an user table in the database with a name and an id, and add a foreign key to the article table to link the article with the user who posted it.
