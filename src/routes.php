@@ -13,4 +13,9 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'blog' => ['BlogController', 'index',],
+    'blog/edit' => ['BlogController', 'edit', ['id']],
+    'blog/show' => ['BlogController', 'show', ['id']],
+    'blog/add' => ['BlogController', 'add',],
+    'blog/delete' => ['BlogController', 'delete',],
 ];

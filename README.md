@@ -1,11 +1,4 @@
-# Simple MVC
-
-## Description
-
-This repository is a simple PHP MVC structure from scratch.
-
-It uses some cool vendors/libraries such as Twig and Grumphp.
-For this one, just a simple example where users can choose one of their databases and see tables in it.
+# Simple MVC - CRUD exercise
 
 ## Steps
 
@@ -25,55 +18,23 @@ define('APP_DB_PASSWORD', 'your_db_password');
 6. Go to `localhost:8000` with your favorite browser.
 7. From this starter kit, create your own web application.
 
-### Windows Users
+## Goal
 
-If you develop on Windows, you should edit you git configuration to change your end of line rules with this command :
+Using the ItemController example provided, try to create a BlogController and the other required files to implement a working CRUD for blog articles.
 
-`git config --global core.autocrlf true`
+An article in the database must have :
 
-## Example
+-   An id
+-   A title
+-   A content
 
-An example (a basic list of items) is provided (you can load the _simple-mvc.sql_ file in a test database). The accessible URLs are :
+You can modify the database.sql file before using `php migrate.php` to create the required table with those fields.
 
--   Home page at [localhost:8000/](localhost:8000/)
--   Items list at [localhost:8000/items](localhost:8000/items)
--   Item details [localhost:8000/items/show?id=:id](localhost:8000/item/show?id=2)
--   Item edit [localhost:8000/items/edit?id=:id](localhost:8000/items/edit?id=2)
--   Item add [localhost:8000/items/add](localhost:8000/items/add)
--   Item deletion [localhost:8000/items/delete?id=:id](localhost:8000/items/delete?id=2)
+As a reminder, CRUD stands for Create Update Read Delete, so the end result must implement the following methods :
 
-You can find all these routes declared in the file `src/routes.php`. This is the very same file where you'll add your own new routes to the application.
+-   Create (to add or insert a new article in the database)
+-   Read (to read or view one or multiple articles in the database, so there wil need to be 2 methods, one to select all articles, and the other one to select only one)
+-   Update (to modify one of the entries in the database)
+-   Delete (to remove one of the entry from the database)
 
-## How does URL routing work ?
-
-![simple_MVC.png](.tours/simple_MVC.png)
-
-## Ask for a tour !
-
-<img src="./.tours/photo-1632178151697-fd971baa906f.jpg" alt="Guided tour" width="150"/>
-
-We prepare a little guided tour to start with the simple-MVC.
-
-To take it, you need to install the `Code Tour` extension for Visual Studio Code : [Code Tour](https://marketplace.visualstudio.com/items?itemName=vsls-contrib.codetour)
-
-It will give access to a new menu on your IDE where you'll find the different tours about the simple-MVC. Click on play to start one :
-
-![menu](.tours/code_tour_menu.png)
-
-## Run it on docker
-
-If you don't know what is docker, skip this chapter. ;)
-
-Otherwise, you probably see, this project is ready to use with docker.
-
-To build the image, go into the project directory and in your CLI type:
-
-```
-docker build -t simple-mvc-container .
-```
-
-then, run it to open it on your localhot :
-
-```
-docker run -i -t --name simple-mvc  -p 80:80 simple-mvc-container
-```
+The routes.php file already provides the required routes but feel free to modify them if you want or need to.
