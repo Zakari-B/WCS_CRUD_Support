@@ -27,51 +27,38 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `title` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `article` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `content` text NOT NULL
+CREATE TABLE `user` (
+  `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `article` (
+  `id` int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `content` TEXT NOT NULL,
+  `user_id` INT NOT NULL,
+  CONSTRAINT fk_article_user FOREIGN KEY (user_id) REFERENCES user(id)
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Contenu de la table `item`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `item` (`title`) VALUES
+('Stuff'),
+('Doodads');
 
-INSERT INTO `article` (`id`, `title`, `content`) VALUES
-(1, 'Mon premier article', 'Voici le premier article de mon blog (mais pas le dernier) !');
+INSERT INTO `user` (`name`) VALUES
+('Admin'),
+('Some_User206847');
 
---
--- Index pour les tables exportées
---
+INSERT INTO `article` (`title`, `content`, `user_id`) VALUES
+('Mon premier article', 'Voici le premier article de mon blog (mais pas le dernier) !', 1);
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
-ALTER TABLE `article`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
-ALTER TABLE `article`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

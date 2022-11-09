@@ -4,6 +4,7 @@
     <h1>Article : {{ article.title }}</h1>
     <p>{{ article.id }}. {{ article.title }}</p>
     <p>{{ article.content }}</p>
+    <p>- by {{ user.name }}</p>
     <a href="/blog/edit?id={{ article.id }}">Edit</a>
     <form action="/blog/delete" method="POST">
         <input type="hidden" name="id" value="{{ article.id }}">

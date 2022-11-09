@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\BlogManager;
+use App\Model\UserManager;
 
 class BlogController extends AbstractController
 {
@@ -17,9 +18,14 @@ class BlogController extends AbstractController
     public function show(int $id): string
     {
         $blogManager = new BlogManager();
+        $userManager = new UserManager();
         $article = $blogManager->selectOneById($id);
+        $user = $userManager->selectOneById($article['user_id']);
 
-        return $this->twig->render('Blog/show.html.twig', ['article' => $article]);
+        return $this->twig->render('Blog/show.html.twig', [
+            'article' => $article,
+            'user' => $user
+        ]);
     }
 
     /**
