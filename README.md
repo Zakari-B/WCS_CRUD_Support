@@ -39,6 +39,10 @@ As a reminder, CRUD stands for Create Update Read Delete, so the end result must
 
 The routes.php file already provides the required routes but feel free to modify them if you want or need to.
 
+### Bonus
+
+Once you're done, try to add an user table in the database with a name and an id, and add a foreign key to the article table to link the article with the user who posted it.
+
 ## Correction
 
-If you are stuck, or if you finished this exercise, you can check the toolbox in this branch to get an example of what the end result could look like.
+You will find working examples of how you could have solved this exercice in the toolbox folder. Try to solve it by yourself first and if you are stuck, don't hesitate to take a look to compare with your work.
